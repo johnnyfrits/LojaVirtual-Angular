@@ -4,4 +4,4 @@ npm install -g @angular/cli
 
 npm install bootstrap jquery
 
-npm install bootstrap-icons
+npm install bootstrap-icons --save
