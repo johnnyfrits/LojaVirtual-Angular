@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,11 @@ import { CustomerDeleteComponent } from './components/customer/customer-delete/c
 import { OrderCreateComponent } from './components/order/order-create/order-create.component';
 import { OrderUpdateComponent } from './components/order/order-update/order-update.component';
 import { OrderDeleteComponent } from './components/order/order-delete/order-delete.component';
+
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -48,9 +54,13 @@ import { OrderDeleteComponent } from './components/order/order-delete/order-dele
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR',
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

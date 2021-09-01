@@ -1,10 +1,13 @@
-<div class="container">
+<div class="container pb-3">
   <div class="card">
     <div class="card-header">
+      <i class="bi bi-bag-fill"></i>
       Pedidos
     </div>
     <div class="card-body">
-      <a name="" id="" class="btn btn-primary" href="/orders/create" role="button">Novo Pedido</a>
+      <a name="" id="" class="btn btn-primary" routerLink="/orders/create" role="button">
+        <i class="bi bi-bag-plus-fill"></i>
+        Novo Pedido</a>
       <hr>
       <table class="table table-hover">
         <thead>
@@ -12,11 +15,17 @@
             <th>#</th>
             <th>Data</th>
             <th>Cliente</th>
-            <th>Valor</th>
+            <th class="number">Valor</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
+          <tr *ngFor="let o of orders">
+            <td>{{o.id}}</td>
+            <td>{{o.date | date: 'dd/MM/yyyy' }}</td>
+            <td>{{o.customerName}}</td>
+            <td class="number">{{o.total | currency: 'BRL'}}</td>
+          </tr>
         </tbody>
       </table>
     </div>
