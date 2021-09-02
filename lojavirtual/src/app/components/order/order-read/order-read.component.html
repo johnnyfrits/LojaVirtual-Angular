@@ -25,6 +25,14 @@
             <td>{{o.date | date: 'dd/MM/yyyy' }}</td>
             <td>{{o.customerName}}</td>
             <td class="number">{{o.total | currency: 'BRL'}}</td>
+            <td>
+              <a class="edit" routerLink="/orders/update">
+                <i class="bi bi-pencil-fill" placement="top" ngbTooltip="Editar"></i>
+              </a>
+              <a class="delete" routerLink="/orders/delete">
+                <i class="bi bi-trash-fill" placement="top" ngbTooltip="Excluir"></i>
+              </a>
+            </td>
           </tr>
         </tbody>
       </table>

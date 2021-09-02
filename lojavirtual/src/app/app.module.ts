@@ -27,6 +27,9 @@ import { OrderDeleteComponent } from './components/order/order-delete/order-dele
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
+import { CpfPipe } from 'src/app/pipes/cpf.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 registerLocaleData(localePt);
 
 @NgModule({
@@ -50,12 +53,14 @@ registerLocaleData(localePt);
     CustomerDeleteComponent,
     OrderCreateComponent,
     OrderUpdateComponent,
-    OrderDeleteComponent
+    OrderDeleteComponent,
+    CpfPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [{
     provide: LOCALE_ID,

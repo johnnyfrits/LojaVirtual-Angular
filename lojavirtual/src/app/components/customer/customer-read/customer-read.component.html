@@ -22,13 +22,13 @@
           <tr *ngFor="let c of customers">
             <td>{{c.id}}</td>
             <td>{{c.name}}</td>
-            <td>{{c.cpf}}</td>
+            <td>{{c.cpf | cpf}}</td>
             <td>
               <a class="edit" routerLink="/customers/update">
-                <i class="bi bi-pencil-fill"></i>
+                <i class="bi bi-pencil-fill" placement="top" ngbTooltip="Editar"></i>
               </a>
               <a class="delete" routerLink="/customers/delete">
-                <i class="bi bi-trash-fill"></i>
+                <i class="bi bi-trash-fill" placement="top" ngbTooltip="Excluir"></i>
               </a>
             </td>
           </tr>

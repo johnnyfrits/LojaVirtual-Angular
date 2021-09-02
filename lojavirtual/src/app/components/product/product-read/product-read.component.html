@@ -1,1 +1,39 @@
-<p>product-read works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <i class="bi bi-people-fill"></i>
+      Produtos
+    </div>
+    <div class="card-body">
+      <a name="" id="" class="btn btn-primary" routerLink="/products/create" role="button">
+        <i class="bi bi-plus-lg"></i>
+        Novo Produto</a>
+      <hr>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Descrição</th>
+            <th class="number">Preço</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td class="number">{{p.price | currency: 'BRL'}}</td>
+            <td>
+              <a class="edit" routerLink="/products/update">
+                <i class="bi bi-pencil-fill" placement="top" ngbTooltip="Editar"></i>
+              </a>
+              <a class="delete" routerLink="/products/delete">
+                <i class="bi bi-trash-fill" placement="top" ngbTooltip="Excluir"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
