@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiUrls } from 'src/app/common/api-urls'
-import { EMPTY, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Customer } from 'src/app/models/customer.model';
+import { CommonMethods } from 'src/app/common/common-methods';
 
 
 @Injectable({
@@ -17,16 +18,40 @@ export class CustomerService {
 
     return this.http.get<Customer[]>(ApiUrls.customers).pipe(
       map(obj => obj),
-      catchError(e => this.errorHandler(e))
+      catchError(e => CommonMethods.errorHandler(e))
     );
   }
 
-  errorHandler(err: any): Observable<any> {
+  readById(id: number): Observable<Customer> {
 
-    console.log(err);
+    return this.http.get<Customer>(`${ApiUrls.customers}/${id}`).pipe(
 
-    alert("Ocorreu um erro!");
+      map(obj => obj),
+      catchError(e => CommonMethods.errorHandler(e))
+    )
+  }
 
-    return EMPTY;
+  create(customer: Customer): Observable<Customer> {
+
+    return this.http.post<Customer>(ApiUrls.customers, customer).pipe(
+      map(obj => obj),
+      catchError(e => CommonMethods.errorHandler(e))
+    );
+  }
+
+  update(customer: Customer): Observable<Customer> {
+
+    return this.http.put<Customer>(`${ApiUrls.customers}/${customer.id}`, customer).pipe(
+      map(obj => obj),
+      catchError(e => CommonMethods.errorHandler(e))
+    );
+  }
+
+  delete(id: number): Observable<Customer> {
+
+    return this.http.delete<Customer>(`${ApiUrls.customers}/${id}`).pipe(
+      map(obj => obj),
+      catchError(e => CommonMethods.errorHandler(e))
+    );
   }
 }

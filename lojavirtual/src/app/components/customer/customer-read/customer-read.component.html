@@ -24,10 +24,10 @@
             <td>{{c.name}}</td>
             <td>{{c.cpf | cpf}}</td>
             <td>
-              <a class="edit" routerLink="/customers/update">
+              <a class="edit" routerLink="/customers/update/{{c.id}}">
                 <i class="bi bi-pencil-fill" placement="top" ngbTooltip="Editar"></i>
               </a>
-              <a class="delete" routerLink="/customers/delete">
+              <a class="delete" routerLink="/customers/delete/{{c.id}}">
                 <i class="bi bi-trash-fill" placement="top" ngbTooltip="Excluir"></i>
               </a>
             </td>

@@ -1,1 +1,26 @@
-<p>product-delete works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <i class="bi bi-handbag-fill"></i>
+      Produtos
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">
+        <!-- <i class="bi bi-plus-lg"></i> -->
+        Excluir Produto</h4>
+      <h6 class="card-subtitle text-muted">Confirma a EXCLUSÃO do Produto?</h6>
+      <hr>
+      <dl class="row">
+        <dt class="col-sm">Descrição</dt>
+        <dd class="col-sm-10">{{product.name}}</dd>
+        <dt class="col-sm-2">Preço</dt>
+        <dd class="col-sm-10">{{product.price | currency: 'BRL'}}</dd>
+      </dl>
+    </div>
+    <div class="card-footer text-muted">
+      <button class="btn btn-danger btn-save" (click)="deleteProduct()">Excluir</button>
+      <button class="btn btn-secondary" (click)="cancel()">Voltar</button>
+    </div>
+  </div>
+
+</div>

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-header">
-      <i class="bi bi-people-fill"></i>
+      <i class="bi bi-handbag-fill"></i>
       Produtos
     </div>
     <div class="card-body">
@@ -24,10 +24,10 @@
             <td>{{p.name}}</td>
             <td class="number">{{p.price | currency: 'BRL'}}</td>
             <td>
-              <a class="edit" routerLink="/products/update">
+              <a class="edit" routerLink="/products/update/{{p.id}}">
                 <i class="bi bi-pencil-fill" placement="top" ngbTooltip="Editar"></i>
               </a>
-              <a class="delete" routerLink="/products/delete">
+              <a class="delete" routerLink="/products/delete/{{p.id}}">
                 <i class="bi bi-trash-fill" placement="top" ngbTooltip="Excluir"></i>
               </a>
             </td>

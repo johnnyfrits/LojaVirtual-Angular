@@ -1,1 +1,25 @@
-<p>custormer-delete works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <i class="bi bi-handbag-fill"></i>
+      Clientes
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">
+        <!-- <i class="bi bi-plus-lg"></i> -->
+        Excluir Cliente</h4>
+      <h6 class="card-subtitle text-muted">Confirma a EXCLUSÃO do Cliente?</h6>
+      <hr>
+      <dl class="row">
+        <dt class="col-sm">Nome</dt>
+        <dd class="col-sm-10">{{customer.name}}</dd>
+        <dt class="col-sm-2">CPF</dt>
+        <dd class="col-sm-10">{{customer.cpf | cpf}}</dd>
+      </dl>
+    </div>
+    <div class="card-footer text-muted">
+      <button class="btn btn-danger btn-save" (click)="deleteCustomer()">Excluir</button>
+      <button class="btn btn-secondary" (click)="cancel()">Voltar</button>
+    </div>
+  </div>
+</div>

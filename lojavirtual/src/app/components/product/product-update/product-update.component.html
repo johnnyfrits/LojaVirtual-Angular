@@ -1,1 +1,41 @@
-<p>product-update works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <i class="bi bi-handbag-fill"></i>
+      Produtos
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">
+        <!-- <i class="bi bi-plus-lg"></i> -->
+        Editar Produto</h4>
+      <hr>
+      <div class="row">
+        <div class="col-md">
+          <form>
+            <div class="form-group">
+              <label for="name" class="control-label">Descrição</label>
+              <input type="text" name="name" id="name" class="form-control" required minlength="1"
+                [(ngModel)]="product.name" #name="ngModel">
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+                <div *ngIf="name.errors?.required">
+                  Informe a Descrição.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="price" class="control-label">Preço</label>
+              <input type="number" name="price" id="price" class="form-control" required [(ngModel)]="product.price">
+            </div>
+            <div class="form-group btn-save">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <button class="btn btn-primary btn-save" (click)="updateProduct()">Salvar</button>
+      <button class="btn btn-secondary" (click)="cancel()">Voltar</button>
+    </div>
+  </div>
+
+</div>

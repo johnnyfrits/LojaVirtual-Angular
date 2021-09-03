@@ -33,3 +33,8 @@ body {
 .delete>i {
   color: red
 }
+
+.btn-save {
+
+  margin-right: 10px;
+}
