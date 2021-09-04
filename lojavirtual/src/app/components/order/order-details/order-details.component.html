@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <i class="bi bi-bag-fill"></i>
+      Pedidos
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">
+        <!-- <i class="bi bi-plus-lg"></i> -->
+        Detalhes do Pedido</h4>
+      <h6 class="card-subtitle text-muted">Pedido #{{order.id}}</h6>
+      <hr>
+      <dl class="row">
+        <dt class="col-sm">Data:</dt>
+        <dd class="col-sm-10">{{order.date | date: 'dd/MM/yyyy'}}</dd>
+        <dt class="col-sm-2">Cliente:</dt>
+        <dd class="col-sm-10">{{order.customerName}}</dd>
+        <dt class="col-sm-2">Total:</dt>
+        <dd class="col-sm-10">{{order.total | currency: 'BRL'}}</dd>
+      </dl>
+      <div class="card">
+        <div class="card-header">
+          <i class="bi bi-handbag-fill"></i>
+          Itens do Pedido
+        </div>
+        <div class="card-body">
+          <a name="" id="" class="btn btn-primary" routerLink="/orders/items/create/{{order.id}}" role="button">
+            <i class="bi bi-plus-lg"></i>
+            Incluir Produto</a>
+          <hr>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th class="number">Quantidade</th>
+                <th class="number">Preço</th>
+                <th class="number">Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of order.orderItems">
+                <td>{{i.productId}}</td>
+                <td>{{i.productName}}</td>
+                <td class="number">{{i.quantity}}</td>
+                <td class="number">{{i.price | currency: 'BRL'}}</td>
+                <td class="number">{{i.total | currency: 'BRL'}}</td>
+                <td>
+                  <a class="edit" routerLink="/orders/items/update/{{i.id}}">
+                    <i class="bi bi-pencil-fill" placement="top" ngbTooltip="Editar"></i>
+                  </a>
+                  <a class="delete" routerLink="/orders/items/delete/{{i.id}}">
+                    <i class="bi bi-trash-fill" placement="top" ngbTooltip="Excluir"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <button class="btn btn-secondary" (click)="cancel()">Voltar</button>
+    </div>
+  </div>
+
+</div>

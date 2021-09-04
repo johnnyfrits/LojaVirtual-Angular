@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">
       <i class="bi bi-people-fill"></i>
-      Produtos
+      Clientes
     </div>
     <div class="card-body">
       <h4 class="card-title">
@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-md">
           <form>
-            <div class="form-group">
+            <div class="form-group col-md-10">
               <label for="name" class="control-label">Nome</label>
               <input type="text" name="name" id="name" class="form-control" required minlength="1"
                 [(ngModel)]="customer.name" #name="ngModel">
@@ -21,7 +21,7 @@
                 </div>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
               <label for="price" class="control-label">CPF</label>
               <input type="number" name="price" id="price" class="form-control" required [(ngModel)]="customer.cpf">
             </div>

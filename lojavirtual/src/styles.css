@@ -27,11 +27,15 @@ body {
 }
 
 .edit>i {
-  color: green;
+  color: rgb(253, 173, 0);
+}
+
+.details {
+  margin-right: 10px;
 }
 
 .delete>i {
-  color: red
+  color: orangered
 }
 
 .btn-save {

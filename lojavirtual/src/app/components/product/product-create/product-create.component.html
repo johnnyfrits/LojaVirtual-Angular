@@ -10,9 +10,9 @@
         Cadastrar Produto</h4>
       <hr>
       <div class="row">
-        <div class="col-md">
+        <div>
           <form>
-            <div class="form-group">
+            <div class="form-group col-md-10">
               <label for="name" class="control-label">Descrição</label>
               <input type="text" name="name" id="name" class="form-control" required minlength="1"
                 [(ngModel)]="product.name" #name="ngModel">
@@ -22,7 +22,7 @@
                 </div>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
               <label for="price" class="control-label">Preço</label>
               <input type="number" name="price" id="price" class="form-control" required [(ngModel)]="product.price">
             </div>

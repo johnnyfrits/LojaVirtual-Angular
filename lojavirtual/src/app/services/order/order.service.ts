@@ -20,6 +20,14 @@ export class OrderService {
     );
   }
 
+  readById(id: number): Observable<Order> {
+
+    return this.http.get<Order>(`${ApiUrls.orders}/${id}`).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+    );
+  }
+
   errorHandler(err: any): Observable<any> {
 
     console.log(err);

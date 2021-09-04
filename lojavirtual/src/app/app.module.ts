@@ -24,12 +24,16 @@ import { CustomerDeleteComponent } from './components/customer/customer-delete/c
 import { OrderCreateComponent } from './components/order/order-create/order-create.component';
 import { OrderUpdateComponent } from './components/order/order-update/order-update.component';
 import { OrderDeleteComponent } from './components/order/order-delete/order-delete.component';
+import { OrderDetailsComponent } from './components/order/order-details/order-details.component';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
 import { CpfPipe } from 'src/app/pipes/cpf.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OrderItemsCreateComponent } from './components/orderItems/order-items-create/order-items-create.component';
+import { OrderItemsUpdateComponent } from './components/orderItems/order-items-update/order-items-update.component';
+import { OrderItemsDeleteComponent } from './components/orderItems/order-items-delete/order-items-delete.component';
 
 registerLocaleData(localePt);
 
@@ -55,7 +59,11 @@ registerLocaleData(localePt);
     OrderCreateComponent,
     OrderUpdateComponent,
     OrderDeleteComponent,
-    CpfPipe
+    CpfPipe,
+    OrderDetailsComponent,
+    OrderItemsCreateComponent,
+    OrderItemsUpdateComponent,
+    OrderItemsDeleteComponent
   ],
   imports: [
     BrowserModule,

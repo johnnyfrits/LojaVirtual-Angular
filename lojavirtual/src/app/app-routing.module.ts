@@ -7,6 +7,7 @@ import { OrderReadComponent } from './components/order/order-read/order-read.com
 import { OrderCreateComponent } from './components/order/order-create/order-create.component';
 import { OrderUpdateComponent } from './components/order/order-update/order-update.component';
 import { OrderDeleteComponent } from './components/order/order-delete/order-delete.component';
+import { OrderDetailsComponent } from './components/order/order-details/order-details.component';
 import { ProductComponent } from './views/product/product.component';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
@@ -17,6 +18,9 @@ import { CustomerReadComponent } from './components/customer/customer-read/custo
 import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
 import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
+import { OrderItemsCreateComponent } from './components/orderItems/order-items-create/order-items-create.component';
+import { OrderItemsUpdateComponent } from './components/orderItems/order-items-update/order-items-update.component';
+import { OrderItemsDeleteComponent } from './components/orderItems/order-items-delete/order-items-delete.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, },
@@ -25,6 +29,10 @@ const routes: Routes = [
   { path: "orders/create", component: OrderCreateComponent },
   { path: "orders/update/:id", component: OrderUpdateComponent },
   { path: "orders/delete/:id", component: OrderDeleteComponent },
+  { path: "orders/details/:id", component: OrderDetailsComponent },
+  { path: "orders/items/create/:id", component: OrderItemsCreateComponent },
+  { path: "orders/items/update/:id", component: OrderItemsUpdateComponent },
+  { path: "orders/items/delete/:id", component: OrderItemsDeleteComponent },
   { path: "customers", component: CustomerComponent },
   { path: "customers/read", component: CustomerReadComponent },
   { path: "customers/create", component: CustomerCreateComponent },
