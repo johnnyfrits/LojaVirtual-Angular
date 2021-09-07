@@ -1,1 +1,24 @@
-<p>order-delete works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <i class="bi bi-bag-fill"></i>
+      Pedidos
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">
+        Excluir Pedido</h4>
+      <h6 class="card-subtitle text-muted">Confirma a EXCLUSÃO do Pedido #{{order.id}}?</h6>
+      <hr>
+      <dl class="row">
+        <dt class="col-sm">Cliente</dt>
+        <dd class="col-sm-10">{{order.customerName}}</dd>
+        <dt class="col-sm-2">Data</dt>
+        <dd class="col-sm-10">{{order.date | date: 'dd/MM/yyyy'}}</dd>
+      </dl>
+    </div>
+    <div class="card-footer text-muted">
+      <button class="btn btn-danger btn-save" (click)="deleteOrder()">Excluir</button>
+      <button class="btn btn-secondary" (click)="cancel()">Voltar</button>
+    </div>
+  </div>
+</div>
