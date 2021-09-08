@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: "orders/update/:id", component: OrderUpdateComponent },
   { path: "orders/delete/:id", component: OrderDeleteComponent },
   { path: "orders/details/:id", component: OrderDetailsComponent },
-  { path: "orders/items/create/:id", component: OrderItemsCreateComponent },
+  { path: "orders/items/create/:orderId", component: OrderItemsCreateComponent },
   { path: "orders/items/update/:id", component: OrderItemsUpdateComponent },
   { path: "orders/items/delete/:id", component: OrderItemsDeleteComponent },
   { path: "customers", component: CustomerComponent },

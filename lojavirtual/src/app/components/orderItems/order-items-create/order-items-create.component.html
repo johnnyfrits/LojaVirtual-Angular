@@ -1,1 +1,46 @@
-<p>order-items-create works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <i class="bi bi-bag-fill"></i>
+      Pedidos
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">
+        <!-- <i class="bi bi-plus-lg"></i> -->
+        Incluir Item do Pedido #{{orderItems.orderId}}</h4>
+      <hr>
+      <div class="row">
+        <div>
+          <form>
+            <div class="form-group col-md-4">
+              <label for="name" class="control-label">Produto</label>
+              <select class="form-select" id="customerId" name="customerId" [(ngModel)]="orderItems.productId"
+                (ngModelChange)="getPrice()">
+                <option *ngFor="let product of products" [value]="product.id">{{product.name}} ({{product.id}})
+                </option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="quantity">Quantidade</label>
+              <input type="number" name="quantity" id="quantity" class="form-control" min=1
+                [(ngModel)]="orderItems.quantity" (ngModelChange)="getTotal()">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="price">Preço</label>
+              <input type="price" name="price" id="price" class="form-control" disabled [(ngModel)]="orderItems.price">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="total">Total</label>
+              <input type="total" name="total" id="total" class="form-control" disabled [(ngModel)]="orderItems.total">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <button class="btn btn-primary btn-save" (click)="createOrderItems()">Salvar</button>
+      <button class="btn btn-secondary" (click)="cancel()">Voltar</button>
+    </div>
+  </div>
+
+</div>

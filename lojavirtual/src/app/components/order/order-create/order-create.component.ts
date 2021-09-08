@@ -28,7 +28,7 @@ export class OrderCreateComponent implements OnInit {
 
       if (this.customers.length > 0 && this.customers[0].id)
 
-        this.order.customerId = this.customers[0].id
+        this.order.customerId = this.customers[0].id;
     });
   }
 
